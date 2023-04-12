@@ -16,10 +16,15 @@ export default class FiveSignalsCondition implements Condition {
       return HandlerCaseForFiveSignals.DONT_EXIST_FOUR_ELEMENTS;
     }
 
-    const firstEventTime = array[arrayLength - 4];
-    const secEventTime = array[arrayLength - 3];
-    const thirdEventTime = array[arrayLength - 2];
-    const fourthEventTime = array[arrayLength - 1];
+    const firstArrayElement = arrayLength - 4;
+    const secArrayElement = arrayLength - 3;
+    const thirdArrayElement = arrayLength - 2;
+    const fourthArrayElement = arrayLength - 1;
+
+    const firstEventTime = array[firstArrayElement];
+    const secEventTime = array[secArrayElement];
+    const thirdEventTime = array[thirdArrayElement];
+    const fourthEventTime = array[fourthArrayElement];
 
     const isEnoughMsBetweenElements = 
       this.isEnoughMsBetweenElements(firstEventTime, secEventTime, thirdEventTime, fourthEventTime);
@@ -40,7 +45,7 @@ export default class FiveSignalsCondition implements Condition {
   private isEventTimesArrayHasFourElements(
     eventsTimesListLength: number
   ): boolean {
-    return eventsTimesListLength < 4 ? false : true;
+    return eventsTimesListLength >= 4 ? true : false;
   }
 
   private isEnoughMsBetweenElements(

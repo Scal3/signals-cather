@@ -16,8 +16,11 @@ export default class ThreeSignalsCondition implements Condition {
       return HandlerCaseForThreeSignals.DONT_EXIST_TWO_ELEMENTS;
     }
 
-    const firstEventTime = array[arrayLength - 2];
-    const secEventTime = array[arrayLength - 1];
+    const firstArrayElement = arrayLength - 2;
+    const secArrayElement = arrayLength - 1;
+
+    const firstEventTime = array[firstArrayElement];
+    const secEventTime = array[secArrayElement];
 
     const isEnoughMsBetweenFirstAndSecEvt = 
       this.isEnoughMsBetweenFirstAndSecEvt(firstEventTime, secEventTime);
@@ -38,7 +41,7 @@ export default class ThreeSignalsCondition implements Condition {
   private isEventTimesArrayHasTwoElements(
     eventsTimesListLength: number
   ): boolean {
-    return eventsTimesListLength < 2 ? false : true;
+    return eventsTimesListLength >= 2 ? true : false;
   }
 
   private isEnoughMsBetweenFirstAndSecEvt(
