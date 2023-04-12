@@ -41,14 +41,14 @@ export default class ThreeSignalsCondition implements Condition {
   private isEventTimesArrayHasTwoElements(
     eventsTimesListLength: number
   ): boolean {
-    return eventsTimesListLength >= 2 ? true : false;
+    return eventsTimesListLength >= 2;
   }
 
   private isEnoughMsBetweenFirstAndSecEvt(
     firstEventTime: number, secEventTime: number
   ): boolean {
     const difference = secEventTime - firstEventTime;
-    return difference > this.START_INTERVAL_MS && difference < this.FINISH_INTERVAL_MS ? true : false;
+    return difference > this.START_INTERVAL_MS && difference < this.FINISH_INTERVAL_MS;
   }
 
   private isDifferenceCorrect(time: number): boolean {

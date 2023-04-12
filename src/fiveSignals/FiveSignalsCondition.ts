@@ -45,7 +45,7 @@ export default class FiveSignalsCondition implements Condition {
   private isEventTimesArrayHasFourElements(
     eventsTimesListLength: number
   ): boolean {
-    return eventsTimesListLength >= 4 ? true : false;
+    return eventsTimesListLength >= 4;
   }
 
   private isEnoughMsBetweenElements(

@@ -21,7 +21,7 @@ export default class Analyzer implements AnalyzerInterface {
       cb: this.cb,
       updateArrCb: this.updateArr
     }
-
+    console.log(this.eventsTimesArray);
     this.handler.handleCases(handlerParams);
   }
 
